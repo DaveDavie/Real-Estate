@@ -1,507 +1,112 @@
 
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Home Depot Discount Rewards | RemoteDock US</title>
-  <meta name="description" content="Explore partner offers and reward opportunities with RemoteDock US. Review offer requirements and eligibility before participating.">
-
-  <meta property="og:title" content="Home Depot Discount Rewards | RemoteDock US">
-  <meta property="og:description" content="Explore partner offers and reward opportunities with RemoteDock US.">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Vercel Web Analytics: plain HTML setup -->
-  <script>
-    window.va = window.va || function () {
-      (window.vaq = window.vaq || []).push(arguments);
-    };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-
-  <!-- Preserve existing site script -->
-  <script defer src="js/script.js"></script>
-
-  <style>
-    :root {
-      --brand: #f96302;
-      --brand-hover: #d94f00;
-      --brand-fg: #ffffff;
-      --success: #237a45;
-      --surface: #ffffff;
-      --card: #ffffff;
-      --ink: #242424;
-      --ink-muted: #666666;
-      --hairline: #e8e8e8;
-      --footer: #fff4eb;
-      --grad: linear-gradient(135deg, #ff7900, #f45100);
-      --shadow-card: 0 8px 28px -18px rgba(60, 40, 20, .24);
-      --shadow-cta: 0 9px 24px -12px rgba(249, 99, 2, .48);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--surface);
-      color: var(--ink);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .wrap {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .veil {
-      background:
-        radial-gradient(
-          ellipse at 50% 0%,
-          rgba(255, 121, 0, .12),
-          transparent 65%
-        ),
-        #ffffff;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 0;
-    }
-
-    .logo {
-      font-size: 15px;
-      font-weight: 800;
-      letter-spacing: .07em;
-      text-transform: uppercase;
-      color: var(--brand);
-    }
-
-    .pill {
-      border: 1px solid #f2d8c7;
-      background: #fff7f1;
-      border-radius: 999px;
-      padding: 7px 13px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #8c420e;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 28px 0 60px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #edf8ef;
-      color: #22683a;
-      border-radius: 999px;
-      padding: 7px 13px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--success);
-    }
-
-    h1 {
-      margin-top: 22px;
-      font-size: clamp(40px, 10vw, 72px);
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: -.045em;
-    }
-
-    h1 span {
-      display: block;
-      margin-top: 8px;
-      color: var(--brand);
-    }
-
-    .lede {
-      max-width: 470px;
-      margin: 22px auto 0;
-      color: var(--ink-muted);
-      font-size: 16px;
-      line-height: 1.75;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      max-width: 380px;
-      margin-top: 30px;
-      padding: 17px 28px;
-      border: 0;
-      border-radius: 8px;
-      background: var(--grad);
-      color: var(--brand-fg);
-      font-weight: 800;
-      font-size: 16px;
-      text-decoration: none;
-      box-shadow: var(--shadow-cta);
-      transition: transform .2s, background .2s, box-shadow .2s;
-    }
-
-    .cta:hover {
-      background: var(--brand-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px -12px rgba(249, 99, 2, .6);
-    }
-
-    .cta:focus-visible {
-      outline: 3px solid #292929;
-      outline-offset: 4px;
-    }
-
-    .fine {
-      margin-top: 13px;
-      font-size: 12px;
-      line-height: 1.7;
-      color: var(--ink-muted);
-    }
-
-    h2.kicker {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--brand-hover);
-    }
-
-    .steps {
-      display: grid;
-      gap: 15px;
-      margin-top: 22px;
-      list-style: none;
-    }
-
-    @media (min-width: 640px) {
-      .steps {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .step {
-      border: 1px solid var(--hairline);
-      background: var(--card);
-      border-radius: 12px;
-      padding: 22px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .num {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 9px;
-      background: var(--grad);
-      color: white;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .step h3 {
-      margin-top: 14px;
-      font-size: 16px;
-      line-height: 1.4;
-    }
-
-    .step p {
-      margin-top: 7px;
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--ink-muted);
-    }
-
-    .claim {
-      margin-top: 34px;
-      border: 1px solid #f1dfd1;
-      border-top: 4px solid var(--brand);
-      background: #fffaf6;
-      border-radius: 12px;
-      padding: 28px 24px;
-      text-align: center;
-      box-shadow: var(--shadow-card);
-    }
-
-    section {
-      padding-bottom: 68px;
-    }
-
-    h2.faq {
-      font-size: 27px;
-      line-height: 1.2;
-      font-weight: 900;
-      letter-spacing: -.025em;
-    }
-
-    .faqs {
-      margin-top: 20px;
-      border: 1px solid var(--hairline);
-      border-radius: 12px;
-      background: var(--card);
-      overflow: hidden;
-    }
-
-    details {
-      border-top: 1px solid var(--hairline);
-    }
-
-    details:first-child {
-      border-top: 0;
-    }
-
-    summary {
-      cursor: pointer;
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 20px;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    summary::after {
-      content: "+";
-      flex-shrink: 0;
-      color: var(--brand);
-      font-size: 21px;
-    }
-
-    details[open] summary::after {
-      content: "\2212";
-    }
-
-    details p {
-      padding: 0 20px 19px;
-      font-size: 14px;
-      line-height: 1.75;
-      color: var(--ink-muted);
-    }
-
-    footer {
-      border-top: 1px solid #f2dfd1;
-      background: var(--footer);
-      padding: 36px 20px;
-      text-align: center;
-    }
-
-    footer .name {
-      font-size: 16px;
-      font-weight: 800;
-      color: var(--brand-hover);
-    }
-
-    footer .disc {
-      max-width: 560px;
-      margin: 11px auto 0;
-      font-size: 12px;
-      line-height: 1.8;
-      color: #68615c;
-    }
-
-    @media (max-width: 480px) {
-      .wrap {
-        padding: 0 17px;
-      }
-
-      header {
-        padding: 18px 0;
-      }
-
-      .hero {
-        padding: 25px 0 46px;
-      }
-
-      h1 {
-        font-size: clamp(37px, 10vw, 48px);
-      }
-
-      .lede {
-        font-size: 15px;
-      }
-
-      .step {
-        padding: 20px;
-      }
-
-      .claim {
-        padding: 24px 17px;
-      }
-
-      section {
-        padding-bottom: 54px;
-      }
-    }
-  </style>
-</head>
+<!DOCTYPE html><html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home Depot Discount Rewards | RemoteDock US</title>
+<meta name="description" content="Claim a Home Depot discount reward with RemoteDock US. Complete a few quick partner deals and get your voucher within hours.">
+<meta property="og:title" content="Home Depot Discount Rewards | RemoteDock US">
+<meta property="og:description" content="Claim a Home Depot discount reward with RemoteDock US. Complete a few quick partner deals and get your voucher within hours.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --brand:#f96302; --brand-glow:#ff8c42; --brand-fg:#fff;
+  --success:#28b273; --surface:#fffdfb; --card:#fff;
+  --ink:#252525; --ink-muted:#6b6865; --hairline:#eee5df;
+  --grad:linear-gradient(135deg,var(--brand),var(--brand-glow));
+  --shadow-card:0 18px 50px -26px rgba(249,99,2,.28);
+  --shadow-cta:0 14px 34px -12px rgba(249,99,2,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--surface);color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.veil{background:radial-gradient(120% 90% at 50% -20%,rgba(249,99,2,.16),transparent 70%)}
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.logo{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-muted)}
+.pill{border:1px solid var(--hairline);background:var(--card);border-radius:999px;padding:4px 12px;font-size:12px;color:var(--ink-muted)}
+.hero{text-align:center;padding:24px 0 56px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:rgba(40,178,115,.15);color:#14603d;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--success)}
+h1{margin-top:20px;font-size:clamp(46px,12vw,76px);line-height:.95;font-weight:900;letter-spacing:-.03em}
+h1 span{display:block;margin-top:4px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{max-width:440px;margin:20px auto 0;color:var(--ink-muted);font-size:16px}
+.cta{display:inline-flex;align-items:center;justify-content:center;width:100%;max-width:380px;margin-top:32px;padding:16px 32px;border-radius:16px;background:var(--grad);color:var(--brand-fg);font-weight:700;font-size:16px;text-decoration:none;box-shadow:var(--shadow-cta);transition:transform .2s}
+.cta:hover{transform:translateY(-2px)}
+.fine{margin-top:12px;font-size:12px;color:var(--ink-muted)}
+h2.kicker{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-muted)}
+.steps{display:grid;gap:12px;margin-top:20px;list-style:none}
+@media(min-width:640px){.steps{grid-template-columns:1fr 1fr}}
+.step{border:1px solid var(--hairline);background:var(--card);border-radius:16px;padding:20px;box-shadow:var(--shadow-card)}
+.num{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:12px;background:var(--grad);color:var(--brand-fg);font-weight:700;font-size:14px}
+.step h3{margin-top:12px;font-size:16px}
+.step p{margin-top:4px;font-size:14px;color:var(--ink-muted)}
+.claim{margin-top:32px;border:1px solid var(--hairline);background:var(--card);border-radius:24px;padding:24px;text-align:center;box-shadow:var(--shadow-card)}
+section{padding-bottom:64px}
+h2.faq{font-size:26px;font-weight:900;letter-spacing:-.02em}
+.faqs{margin-top:16px;border:1px solid var(--hairline);border-radius:16px;background:var(--card);overflow:hidden}
+details{border-top:1px solid var(--hairline)}
+details:first-child{border-top:0}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px 20px;font-size:14px;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--ink-muted)}
+details[open] summary::after{content:"\2212"}
+details p{padding:0 20px 16px;font-size:14px;color:var(--ink-muted)}
+footer{border-top:1px solid var(--hairline);padding:32px 20px;text-align:center;background:#fff5ed}
+footer .name{font-size:14px;font-weight:600}
+footer .disc{max-width:520px;margin:8px auto 0;font-size:12px;color:var(--ink-muted)}
+</style>
+<script>
+  window.va = window.va || function () {
+    (window.vaq = window.vaq || []).push(arguments);
+  };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="js/script.js"></script></head>
+  
 
 <body>
-  <div class="veil">
-    <div class="wrap">
-      <header>
-        <span class="logo">RemoteDock US</span>
-        <span class="pill">US offers</span>
-      </header>
-
-      <div class="hero">
-        <span class="badge">
-          <span class="dot"></span>
-          Partner reward opportunities
-        </span>
-
-        <h1>
-          Home Depot
-          <span>Discount Rewards</span>
-        </h1>
-
-        <p class="lede">
-          Explore partner offers and reward opportunities for your
-          next home improvement project. Review the available offers
-          and their terms before participating.
-        </p>
-
-        <a
-          class="cta"
-          href="https://linkthem.net/aff_c?offer_id=2442&amp;aff_id=28776"
-        >Explore Offers</a>
-
-        <p class="fine">
-          18+ · US residents only · Eligibility and offer requirements apply
-        </p>
-      </div>
+<div class="veil">
+  <div class="wrap">
+    <header><span class="logo">RemoteDock US</span><span class="pill">US offer</span></header>
+    <div class="hero">
+      <span class="badge"><span class="dot"></span>Limited spots today</span>
+      <h1>Home Depot<span>Discount Rewards</span></h1>
+      <p class="lede">Kit out your home or tech for less. Finish a handful of quick partner deals(FREE) and we'll send your Home Depot voucher the same day.</p>
+      <a class="cta" href="https://linkthem.net/aff_c?offer_id=2442&amp;aff_id=28776">Claim now</a>
+      <p class="fine">18+ · US residents only · Deal completion required</p>
     </div>
   </div>
+</div>
 
-  <section class="wrap">
-    <h2 class="kicker">How it works</h2>
+<section class="wrap">
+  <h2 class="kicker">How it works</h2>
+  <ol class="steps">
+    <li class="step"><span class="num">1</span><h3>Tap the claim button</h3><p>No account needed to get started.</p></li>
+    <li class="step"><span class="num">2</span><h3>Enter your email &amp; details</h3><p>So we know where to send the voucher.</p></li>
+    <li class="step"><span class="num">3</span><h3>Complete 5 partner deals(FREE)</h3><p>Short surveys, trials or sign-ups.</p></li>
+    <li class="step"><span class="num">4</span><h3>Claim your reward</h3><p>Then repeat whenever you like.</p></li>
+  </ol>
+  <div class="claim" id="claim">
+    <p style="font-size:18px;font-weight:700">Ready to grab yours?</p>
+    <p style="margin-top:4px;font-size:14px;color:var(--ink-muted)">Takes about 15 minutes end to end.</p>
+    <a class="cta" style="max-width:none" href="https://linkthem.net/aff_c?offer_id=2442&amp;aff_id=28776">Start my claim</a>
+  </div>
+</section>
 
-    <ol class="steps">
-      <li class="step">
-        <span class="num">1</span>
-        <h3>Explore the offers</h3>
-        <p>Review the available partner offers and their requirements.</p>
-      </li>
+<section class="wrap">
+  <h2 class="faq">Frequently asked questions</h2>
+  <div class="faqs">
+    <details open=""><summary>How long do the deals take?</summary><p>Most deals can be completed in 2-5 minutes each.</p></details>
+    <details><summary>What counts as a deal?</summary><p>Deals are simple tasks or offers from partner companies: free trials, surveys, watching videos or small purchases. Each one helps us verify your participation.</p></details>
+    <details><summary>When will I receive my reward?</summary><p>Your Home Depot voucher is delivered within 1-2 hours of completing all required deals. You'll get a confirmation email explaining how to redeem it.</p></details>
+    <details><summary>Is there a cost?</summary><p>Taking part is free, but some partner deals involve a trial or small purchase. Always read each partner's own terms before signing up.</p></details>
+  </div>
+</section>
 
-      <li class="step">
-        <span class="num">2</span>
-        <h3>Review the details</h3>
-        <p>Check eligibility, privacy terms, and any costs before signing up.</p>
-      </li>
+<footer>
+  <p class="name">RemoteDock US</p>
+  <p class="disc">RemoteDock US is an independent rewards platform and is not affiliated with, endorsed by or sponsored by The Home Depot, Inc. Home Depot is a trademark of its respective owner. Rewards require completion of partner offers.</p>
+</footer>
 
-      <li class="step">
-        <span class="num">3</span>
-        <h3>Complete eligible offers</h3>
-        <p>Follow each partner's instructions and completion requirements.</p>
-      </li>
 
-      <li class="step">
-        <span class="num">4</span>
-        <h3>Check reward eligibility</h3>
-        <p>Confirm the reward conditions and redemption process with the provider.</p>
-      </li>
-    </ol>
-
-    <div class="claim" id="claim">
-      <p style="font-size: 20px; font-weight: 800">
-        Ready to explore?
-      </p>
-
-      <p style="margin-top: 8px; font-size: 14px; line-height: 1.7; color: var(--ink-muted)">
-        Review the offer details to see whether you qualify.
-      </p>
-
-      <a
-        class="cta"
-        style="max-width: none"
-        href="https://linkthem.net/aff_c?offer_id=2442&amp;aff_id=28776"
-      >View Available Offers</a>
-    </div>
-  </section>
-
-  <section class="wrap">
-    <h2 class="faq">Frequently asked questions</h2>
-
-    <div class="faqs">
-      <details open>
-        <summary>How long do the offers take?</summary>
-        <p>
-          Completion times vary by partner offer. Check the instructions
-          for each offer before participating.
-        </p>
-      </details>
-
-      <details>
-        <summary>What counts as an eligible offer?</summary>
-        <p>
-          Depending on the provider, offers may include surveys,
-          registrations, trials, or purchases. Individual requirements
-          and costs vary.
-        </p>
-      </details>
-
-      <details>
-        <summary>When will I receive a reward?</summary>
-        <p>
-          Reward availability and delivery times depend on the specific
-          promotion and its terms. Check the provider's conditions for
-          confirmation and redemption details.
-        </p>
-      </details>
-
-      <details>
-        <summary>Are the offers free?</summary>
-        <p>
-          Not necessarily. Some offers may involve subscriptions,
-          purchases, or other charges. Read the terms carefully before
-          signing up or providing payment information.
-        </p>
-      </details>
-    </div>
-  </section>
-
-  <footer>
-    <p class="name">RemoteDock US</p>
-
-    <p class="disc">
-      RemoteDock US is an independent website and is not affiliated
-      with, endorsed by, or sponsored by The Home Depot, Inc.
-      Home Depot is a trademark of its respective owner. Rewards,
-      if offered, are subject to the applicable promotion's terms,
-      eligibility criteria, and availability. Participation does not
-      guarantee a Home Depot gift card or discount.
-    </p>
-  </footer>
-</body>
-</html>
+</body></html>
